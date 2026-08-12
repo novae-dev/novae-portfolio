@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --bg: #080808;
+  --bg-soft: #0d0d0d;
+  --surface: #111111;
+  --surface-hover: #161616;
+
+  --text: #f5f5f5;
+  --text-muted: #929292;
+  --text-dim: #5f5f5f;
+
+  --border: #222222;
+  --border-light: #2c2c2c;
+
+  --accent: #b45cff;
+  --accent-light: #c98aff;
+  --accent-soft: rgba(180, 92, 255, 0.1);
+  --accent-border: rgba(180, 92, 255, 0.3);
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --sans:
+    "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  --mono: "DM Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --container: 1180px;
+  --radius: 12px;
+
+  font-family: var(--sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─────────────────────────────────────────
+   RESET
+───────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* ─────────────────────────────────────────
+   ROOT
+───────────────────────────────────────── */
+
+#root {
+  min-height: 100vh;
+}
+
+/* ─────────────────────────────────────────
+   GLOBAL TYPOGRAPHY
+───────────────────────────────────────── */
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────
+   LAYOUT
+───────────────────────────────────────── */
+
+.container {
+  width: min(var(--container), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 140px 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 64px;
+}
+
+.section-number {
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.section-title {
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 0.95;
+}
+
+.section-description {
+  max-width: 420px;
+  font-size: 15px;
+}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 48px;
+  padding: 0 20px;
+
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+
+  background: transparent;
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-border);
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  border-color: var(--accent-light);
+  background: var(--accent-light);
+}
+
+.btn-secondary {
+  background: transparent;
+}
+
+/* ─────────────────────────────────────────
+   TAGS
+───────────────────────────────────────── */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 11px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text-muted);
+
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background 180ms ease;
+}
+
+.tag:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-light);
+}
+
+/* ─────────────────────────────────────────
+   DIVIDERS
+───────────────────────────────────────── */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─────────────────────────────────────────
+   BACKGROUND GRID
+───────────────────────────────────────── */
+
+.grid-background {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+
+  background-size: 80px 80px;
+}
+
+/* ─────────────────────────────────────────
+   GLOW
+───────────────────────────────────────── */
+
+.glow {
+  position: relative;
+}
+
+.glow::before {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  width: 400px;
+  height: 400px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: var(--accent);
+  border-radius: 50%;
+
+  opacity: 0.08;
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292929;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 32px, var(--container));
+  }
+
+  .section {
+    padding: 90px 0;
+  }
+
+  .section-header {
+    display: block;
+    margin-bottom: 42px;
+  }
+
+  .section-description {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+}
+
+/* ─────────────────────────────────────────
+   REDUCED MOTION
+───────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
