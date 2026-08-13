@@ -1,8 +1,8 @@
-import { ArrowUpRight, GitBranch } from 'lucide-react'
-import { motion } from 'framer-motion'
-import projects from '../data/projects'
+import {ArrowUpRight} from 'lucide-react';
+import {motion} from 'framer-motion';
+import projects from '../data/projects';
 
-function Projects() {
+function Projects () {
   return (
     <section id="work" className="section work">
       <div className="container">
@@ -24,15 +24,13 @@ function Projects() {
         </div>
 
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {projects.map ((project, index) => (
             <motion.article
-              className={`project-card ${
-                index === 0 ? 'project-card-featured' : ''
-              }`}
+              className={`project-card ${project.featured ? 'project-card-featured' : ''}`}
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              initial={{opacity: 0, y: 30}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true, amount: 0.2}}
               transition={{
                 duration: 0.5,
                 delay: index * 0.08,
@@ -63,7 +61,7 @@ function Projects() {
 
                 <div className="project-actions">
                   <div className="tag-list">
-                    {project.technologies.map((technology) => (
+                    {project.technologies.map (technology => (
                       <span className="tag" key={technology}>
                         {technology}
                       </span>
@@ -71,14 +69,20 @@ function Projects() {
                   </div>
 
                   <div className="project-links">
-                    <a href={project.link} aria-label={`View ${project.title}`}>
-                      View project
-                      <ArrowUpRight size={16} />
-                    </a>
+                    {project.status &&
+                      <span className="tag">
+                        {project.status}
+                      </span>}
 
-                    <a href="#" aria-label={`${project.title} GitHub repository`}>
-                      <GitBranch size={17} />
-                    </a>
+                    {project.link &&
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View project
+                        <ArrowUpRight size={16} />
+                      </a>}
                   </div>
                 </div>
               </div>
@@ -87,7 +91,7 @@ function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

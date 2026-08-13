@@ -478,30 +478,6 @@
 ───────────────────────────────────────── */
 
 @media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card-featured {
-    grid-column: span 1;
-  }
-
-  .project-visual {
-    min-height: 240px;
-  }
-
-  .project-info {
-    flex-direction: column;
-  }
-
-  .project-actions {
-    min-width: 0;
-
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 768px) {
   .navbar-inner {
     height: 68px;
   }
@@ -529,6 +505,7 @@
     margin-top: 70px;
   }
 
+  /* Services */
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -536,8 +513,59 @@
   .service-card {
     min-height: 430px;
     padding: 24px;
+    min-width: 0;
   }
 
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-featured {
+    grid-column: span 1;
+  }
+
+  .project-visual {
+    min-height: 240px;
+  }
+
+  .project-info {
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+  }
+
+  .project-info > div {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .project-actions {
+    width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .tag-list {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .tag {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .project-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  /* About */
   .about-title {
     font-size: clamp(58px, 17vw, 100px);
   }
@@ -547,12 +575,11 @@
     margin-left: 0;
   }
 
+  /* Contact */
   .contact-box {
     min-height: 420px;
-
     align-items: flex-start;
     flex-direction: column;
-
     padding: 30px;
   }
 
@@ -560,9 +587,9 @@
     margin-top: auto;
   }
 
+  /* Footer */
   .footer-inner {
     min-height: 120px;
-
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
@@ -585,6 +612,10 @@
 
   .contact-box {
     padding: 24px;
+  }
+
+  .project-visual-title {
+    overflow-wrap: anywhere;
   }
 }
 
@@ -693,8 +724,8 @@
   display: flex;
   justify-content: space-between;
   gap: 30px;
-
   padding: 28px;
+  min-width: 0;
 }
 
 .project-info h3 {
