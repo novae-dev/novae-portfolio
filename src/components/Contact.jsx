@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail, GitBranch } from 'lucide-react'
+import {ArrowUpRight, Mail, GitBranch, MessageCircle} from 'lucide-react';
 import {motion} from 'framer-motion';
 
 function Contact () {
@@ -36,6 +36,19 @@ function Contact () {
           </motion.div>
 
           <div className="contact-links">
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/2349135196246"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MessageCircle size={18} />
+              WhatsApp
+              <ArrowUpRight size={15} />
+            </a>
+
+            {/* GitHub */}
             <a
               href="https://github.com/novae-dev"
               target="_blank"
@@ -46,17 +59,35 @@ function Contact () {
               <ArrowUpRight size={15} />
             </a>
 
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
-              <GitBranch size={18} />
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/abdulmateen-mosobalaje-334088391"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span style={{fontSize: '13px', fontWeight: '700'}}>in</span>
               LinkedIn
               <ArrowUpRight size={15} />
             </a>
 
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/nova_x559c"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span style={{fontSize: '16px'}}>◎</span>
+              Instagram
+              <ArrowUpRight size={15} />
+            </a>
+
+            {/* Email */}
             <a href="mailto:novadev248@gmail.com">
               <Mail size={18} />
               Email
               <ArrowUpRight size={15} />
             </a>
+
           </div>
         </div>
       </div>
