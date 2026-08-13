@@ -4,7 +4,7 @@
 
 .app {
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* ─────────────────────────────────────────
@@ -630,6 +630,7 @@
 }
 
 .project-card {
+  min-width: 0;
   overflow: hidden;
 
   border: 1px solid var(--border);
@@ -712,20 +713,31 @@
   position: relative;
   z-index: 2;
 
+  max-width: 100%;
+
   font-size: clamp(40px, 7vw, 82px);
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.06em;
 
   color: var(--text);
+
+  overflow-wrap: anywhere;
 }
 
 .project-info {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
+
   padding: 28px;
+
   min-width: 0;
+}
+
+.project-info > div:first-child {
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .project-info h3 {
@@ -743,18 +755,38 @@
 }
 
 .project-actions {
-  min-width: 260px;
+  width: min(100%, 300px);
+
+  min-width: 0;
+  flex: 0 1 300px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+
   gap: 20px;
 }
 
+.project-actions .tag-list {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  gap: 7px;
+}
+
 .project-links {
+  width: 100%;
+
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
   gap: 18px;
 }
 
@@ -773,6 +805,78 @@
 
 .project-links a:hover {
   color: var(--accent-light);
+}
+
+/* ─────────────────────────────────────────
+   TABLET / NARROW DESKTOP
+───────────────────────────────────────── */
+
+@media (max-width: 1000px) {
+  .project-info {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .project-actions {
+    width: 100%;
+    flex: none;
+
+    align-items: flex-start;
+  }
+
+  .project-actions .tag-list {
+    justify-content: flex-start;
+  }
+
+  .project-links {
+    justify-content: flex-start;
+  }
+}
+
+/* ─────────────────────────────────────────
+   MOBILE PROJECTS
+───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-featured {
+    grid-column: span 1;
+  }
+
+  .project-visual {
+    min-height: 240px;
+  }
+
+  .project-info {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .project-actions {
+    width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .project-actions .tag-list {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .project-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-visual-title {
+    overflow-wrap: anywhere;
+  }
 }
 
 /* ─────────────────────────────────────────
