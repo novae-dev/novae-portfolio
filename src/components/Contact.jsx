@@ -26,7 +26,7 @@ function Contact () {
             </p>
 
             <a
-              href="mailto:abdulmateen4real2009@gmail.com"
+              href="mailto:novadev248@gmail.com"
               className="btn btn-primary contact-email"
             >
               <Mail size={17} />
@@ -52,7 +52,7 @@ function Contact () {
               <ArrowUpRight size={15} />
             </a>
 
-            <a href="mailto:abdulmateen4real2009@gmail.com">
+            <a href="mailto:novadev248@gmail.com">
               <Mail size={18} />
               Email
               <ArrowUpRight size={15} />
