@@ -7,7 +7,7 @@ const services = [
     title: 'Web Development',
     description:
       'Modern websites and web applications built with clean code, responsive interfaces, APIs, databases, and scalable foundations.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Python', 'Flask', 'REST APIs'],
+    tags: ['HTML', 'CSS', 'JavaScript','React', 'Python', 'Flask', 'REST APIs'],
     icon: Code2,
   },
   {
@@ -22,6 +22,7 @@ const services = [
       'Social Graphics',
       'Photoshop',
       'Canva',
+      'Figma',
     ],
     icon: Palette,
   },
